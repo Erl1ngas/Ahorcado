@@ -7,8 +7,8 @@ function dibujoComienzoJuego() {
 	pincel.lineWidth = 5;
 	pincel.beginPath();
 	pincel.moveTo(160, 350);
-	pincel.lineTo(0, 400);
-	pincel.lineTo(320, 400);
+	pincel.lineTo(50, 400);
+	pincel.lineTo(260, 400);
 	pincel.lineTo(160, 350);
 	pincel.lineTo(160, 100);
 	pincel.lineTo(320, 100);
@@ -20,7 +20,7 @@ function dibujoComienzoJuego() {
 
 function letrasDePalabra(palabra) {
 	pincel.lineCap="round";
-	var x = 600;
+	var x = 630;
 	var y = 400;
 	for (i = 0; i < palabra.length; i++) {
 		x = x + 40;
