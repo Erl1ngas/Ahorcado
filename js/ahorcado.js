@@ -57,7 +57,7 @@ function casoNoIncluyeCaracter(contador) {
     }
 }
 function ventanaSecundaria (URL){ 
-    window.open(src="ganaste.html","ventana1","width=509,height=339,scrollbars=NO")
+    window.open(src="perdiste.html","ventana1","width=674,height=487,scrollbars=NO")
 }
 function seguimientoDeTipeo(evObject) {
 
