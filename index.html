@@ -7,20 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge" />
   <title>Ahorcado</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Short+Stack&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <div style="text-align:center; margin: 50px 0px;">
-    <h1 class="titulo">Ahorcado</h1>
-    <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
+    <h1 class="titulo">AHORCADO!</h1>
+    
   </div>
-  <div style="text-align:center">
+  <div style="text-align:right">
+    <div style="text-align:center" class="letras-probadas" id="letras-probadas"></div>
     <input class="text-input" type="text" id="input-nueva-palabra" placeholder="Escriba una nueva palabra">
     <button class="btn" id="nueva-palabra">AGREGAR PALABRA</button>
+    <button class="btn" id="iniciar-juego">INICIAR JUEGO</button>
+
   </div>
   <div style="text-align:left;">
     <dd><canvas id="ahorcado" height="500px" width="1200px"></canvas></dd>
-    <div style="text-align:center" class="letras-probadas" id="letras-probadas"></div>
+    
   </div>
   <script type="text/javascript" src="js/canvas.js"></script>
   <script type="text/javascript" src="js/ahorcado.js"></script>

@@ -9,7 +9,8 @@ botonAgregarPalabra.addEventListener("click", AgregarPalabras);
 var palabraDesifrar = "";
 var letrasEscritas = [];
 var letrasDescubiertas = [];
-var contadorIntentos = "";
+var contadorIntentos = 0;
+var fallaste = true;
 
 
 function casoIncluyeCaracter(elCaracter) {
@@ -20,35 +21,41 @@ function casoIncluyeCaracter(elCaracter) {
         const element = palabraDesifrar[i];
         if (!letrasDescubiertas.includes(element)) {
             console.log("todavia no ganaste, no encontraste la letra " + element);
+            fallaste = false;
             return;
         }
     }
     console.log("Ganaste el juego");
     document.onkeyup = function () { }
-
+    
 }
 
-function casoNoIncluyeCaracter(contador) {
-    console.log("disparar dibujo de ahorcado");
-    
-    if (letrasEscritas.length == 1){
-        dibujoCabeza();
-        contador ++;
-    } else if(letrasEscritas.length == 2){
-        dibujoDeCuerpo();
-        contador ++;
-    } else if (letrasEscritas.length == 3){
-        dibujoPiernaDerecha();
-        contador ++;
+    if (fallaste){
+        
+        ahorcado()
+            
+    }
 
-    } else if (letrasEscritas.length == 4){
+function ahorcado() {
+        
+    if (contadorIntentos == 1){
+        dibujoCabeza();
+        
+    } else if(contadorIntentos == 2){
+        dibujoDeCuerpo();
+     
+    } else if (contadorIntentos == 3){
+        dibujoPiernaDerecha();
+        
+    } else if (contadorIntentos == 4){
         dibujoPiernaIzquierda();
-        contador ++;
-    } else if (letrasEscritas.length == 5){
+        
+    } else if (contadorIntentos == 5){
         dibujoBrazoIzquierdo();
-        contador ++;
-    } else if (letrasEscritas.length == 6){
+       
+    } else if (contadorIntentos == 6){
         dibujoBrazoDerecho();
+        
     }
     if ((letrasEscritas.length - letrasDescubiertas.length) > 5) {
 
@@ -77,7 +84,9 @@ function seguimientoDeTipeo(evObject) {
     if (palabraDesifrar.includes(elCaracter)) {
         casoIncluyeCaracter(elCaracter)
     } else {
-        casoNoIncluyeCaracter()
+        contadorIntentos++;
+        ahorcado()
+        
     }
 }
 
