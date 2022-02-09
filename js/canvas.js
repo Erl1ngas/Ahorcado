@@ -70,3 +70,13 @@ function dibujoBrazoDerecho(){
 	pincel.lineTo(280, 240);
 	pincel.stroke();
 }
+
+function dibujoDeLetra(elCaracter){
+	pincel.beginPath();
+	pincel.lineWidth = 2;
+	
+	//pincel.moveTo(100, 100);
+	
+	pincel.strokeText(elCaracter,100,100 );
+	
+  }

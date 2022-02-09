@@ -11,11 +11,14 @@ var letrasEscritas = [];
 var letrasDescubiertas = [];
 var contadorIntentos = 0;
 var fallaste = true;
+var elCaracter = "";
 
 
 function casoIncluyeCaracter(elCaracter) {
     console.log("disparar dibujito de letra descubierta");
     letrasDescubiertas.push(elCaracter);
+    dibujoDeLetra();
+    
 
     for (var i = 0; i < palabraDesifrar.length; i++) {
         const element = palabraDesifrar[i];
@@ -25,6 +28,7 @@ function casoIncluyeCaracter(elCaracter) {
             return;
         }
     }
+    window.open(src="ganaste.html","ventana1","width=509,height=339,scrollbars=NO")
     console.log("Ganaste el juego");
     document.onkeyup = function () { }
     
@@ -32,7 +36,7 @@ function casoIncluyeCaracter(elCaracter) {
 
     if (fallaste){
         
-        ahorcado()
+        ahorcado();
             
     }
 
@@ -46,9 +50,11 @@ function ahorcado() {
      
     } else if (contadorIntentos == 3){
         dibujoPiernaDerecha();
+        console.log(contadorIntentos);
         
     } else if (contadorIntentos == 4){
         dibujoPiernaIzquierda();
+        console.log(contadorIntentos);
         
     } else if (contadorIntentos == 5){
         dibujoBrazoIzquierdo();
@@ -66,9 +72,9 @@ function ahorcado() {
 function ventanaSecundaria (URL){ 
     window.open(src="perdiste.html","ventana1","width=674,height=487,scrollbars=NO")
 }
-function seguimientoDeTipeo(evObject) {
+function seguimientoDeTipeo(evObject,elCaracter) {
 
-    var elCaracter = String.fromCharCode(evObject.which);
+    elCaracter = String.fromCharCode(evObject.which);
     if (!(elCaracter >= "A" && elCaracter <= "Z")) {
         return
     }
@@ -80,12 +86,13 @@ function seguimientoDeTipeo(evObject) {
     letrasEscritas.push(elCaracter);
     document.querySelector("#letras-probadas").innerHTML = letrasEscritas;
     console.log(letrasEscritas);
+    
 
     if (palabraDesifrar.includes(elCaracter)) {
         casoIncluyeCaracter(elCaracter)
     } else {
         contadorIntentos++;
-        ahorcado()
+        ahorcado();
         
     }
 }
