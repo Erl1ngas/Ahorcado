@@ -71,12 +71,9 @@ function dibujoBrazoDerecho(){
 	pincel.stroke();
 }
 
-function dibujoDeLetra(elCaracter){
-	pincel.beginPath();
-	pincel.lineWidth = 2;
-	
-	//pincel.moveTo(100, 100);
-	
-	pincel.strokeText(elCaracter,100,100 );
+function dibujoDeLetra(letra,posicion){
+	pincel.font = "50pt comic";
+  	pincel.fillStyle = "black";
+  	pincel.fillText(letra, 100,100);
 	
   }

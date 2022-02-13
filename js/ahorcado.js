@@ -17,13 +17,14 @@ var elCaracter = "";
 function casoIncluyeCaracter(elCaracter) {
     console.log("disparar dibujito de letra descubierta");
     letrasDescubiertas.push(elCaracter);
-    dibujoDeLetra();
+    dibujoDeLetra(letrasDescubiertas);
+    console.log(letrasDescubiertas);
     
-
-    for (var i = 0; i < palabraDesifrar.length; i++) {
-        const element = palabraDesifrar[i];
-        if (!letrasDescubiertas.includes(element)) {
-            console.log("todavia no ganaste, no encontraste la letra " + element);
+    
+    for (i = 0; i < palabraDesifrar.length; i++) {
+        const elemento = palabraDesifrar[i];
+        if (palabraDesifrar[i] == elCaracter) {
+            dibujoDeLetra(elCaracter, i);
             fallaste = false;
             return;
         }
@@ -35,9 +36,7 @@ function casoIncluyeCaracter(elCaracter) {
 }
 
     if (fallaste){
-        
         ahorcado();
-            
     }
 
 function ahorcado() {
