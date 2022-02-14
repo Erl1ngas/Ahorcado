@@ -1,5 +1,5 @@
 body {
-  background: url(images/blockNotas2.jpg);
+  background: url(images/blockNotasTres.jpg);
   background-size: 100% ;
   zoom: 75%;
   
@@ -8,18 +8,20 @@ body {
 
 .titulo {
   padding: 15px;
+  font-size: 77px;
   width: 30vw;
   margin: auto;
   font-family: "Short Stack";
+  color: white;
 
 }
 
 .btn {
   border: 0;
   color: white;
-  font-weight: bold;
+  font-weight: "Short Stack";
   background-color: darkblue;
-  padding: 10px;
+  padding: 15px;
   margin-top: 0px;
   margin-bottom: 0px;
   border-radius: 0.5em;
@@ -35,7 +37,7 @@ body {
   padding: 0.5em;
   width: 15%;
   height: 50px;
-  margin: 2px 1em 0 auto;
+  margin: auto;
 }
 .letras-probadas{
   border-radius: 0.5em;
